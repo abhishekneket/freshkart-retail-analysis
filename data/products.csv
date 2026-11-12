@@ -1,0 +1,49 @@
+product_id,product_name,category,sub_category,unit_price,cost_price
+P001,Redmi Note 13,Electronics,Mobiles,14999,12600
+P002,Samsung Galaxy M34,Electronics,Mobiles,16999,14100
+P003,realme Narzo 60,Electronics,Mobiles,12999,10900
+P004,boAt Airdopes 141,Electronics,Accessories,1299,780
+P005,Mi Power Bank 20000, electronics ,Accessories,1999,1350
+P006,Type-C Cable 1m,Electronics,Accessories,299,120
+P007,Wireless Mouse,Electronics,Accessories,599,330
+P008,Prestige Mixer Grinder,Electronics,Appliances,3499,2650
+P009,Philips Iron,Electronics,Appliances,1199,820
+P010,Bajaj Room Heater,Electronics,Appliances,2299,1650
+P011,Kent Water Purifier,Electronics,Appliances,15499,12200
+P012,Ergo Office Chair,Furniture,Chairs,8999,6900
+P013,Plastic Chair (Set of 4),Furniture,Chairs,2399,1800
+P014,Study Chair,Furniture,Chairs,3499,2600
+P015,Study Table,Furniture,Tables,5499,4300
+P016,Dining Table 4-Seater,Furniture,Tables,14999,11800
+P017,Laptop Table Foldable, furniture ,Tables,1299,820
+P018,Bookshelf 5-Tier,Furniture,Storage,4299,3300
+P019,Plastic Wardrobe,Furniture,Storage,3999,2900
+P020,Shoe Rack,Furniture,Storage,1799,1250
+P021,Aashirvaad Atta 10kg,Grocery,Staples,499,410
+P022,India Gate Basmati 5kg,GROCERY,Staples,749,600
+P023,Fortune Oil 5L,Grocery,Staples,899,760
+P024,Tata Salt 1kg,Grocery,Staples,28,21
+P025,Haldiram Bhujia 1kg,Grocery,Snacks,299,215
+P026,Lays Combo Pack,Grocery,Snacks,199,140
+P027,Britannia Biscuits Pack,Grocery,Snacks,149,104
+P028,Tata Tea Gold 1kg,Grocery,Beverages,599,470
+P029,Nescafe Classic 200g,Grocery,Beverages,649,500
+P030,Real Juice 1L,Grocery,Beverages,125,88
+P031,Men Cotton Shirt, fashion ,Men,999,520
+P032,Men Jeans,Fashion,Men,1499,780
+P033,Men Sports Shoes,Fashion,Men,1999,1150
+P034,Women Kurti,Fashion,Women,899,430
+P035,Women Saree,Fashion,Women,2499,1450
+P036,Women Sandals,Fashion,Women,799,420
+P037,Kids T-shirt Pack,Fashion,Kids,599,320
+P038,Kids School Shoes,Fashion,Kids,899,520
+P039,Prestige Pressure Cooker 5L,Home & Kitchen,Cookware,2299,1700
+P040,Non-stick Tawa,Home & Kitchen,Cookware,899,
+P041,Steel Dinner Set,Home & Kitchen,Cookware,2999,2100
+P042,Wall Clock,Home & Kitchen,Decor,699,380
+P043,LED String Lights,Home & Kitchen,Decor,399,190
+P044,Cushion Covers Set,Home & Kitchen,Decor,499,250
+P045,Harpic 1L Pack of 2,Home & Kitchen,Cleaning,349,270
+P046,Vim Bar Pack,Home & Kitchen,Cleaning,199,150
+P047,Mop with Bucket,Home & Kitchen,Cleaning,1499,980
+P008,Prestige Mixer Grinder,Electronics,Appliances,3499,2650

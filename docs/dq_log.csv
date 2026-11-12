@@ -1,0 +1,24 @@
+id,table,column,issue,rows_affected,how_found,fix,dq_dimension,assumption
+1,products,(full row),Exact duplicate row for P008,1,COUNT vs COUNT DISTINCT; GROUP BY all columns HAVING COUNT>1,SELECT DISTINCT,Uniqueness,Both rows identical so either can be kept
+2,products,cost_price,Missing cost price for P040,1,NULL count per column,Kept as NULL; P040 excluded from profit,Completeness,Cost unknown; not estimated to avoid inventing numbers
+3,products,category,Inconsistent case and leading/trailing spaces,4,GROUP BY category; TRIM/LENGTH comparison,INITCAP(TRIM()),Consistency,None
+4,customers,(full row),Exact duplicate rows,25,COUNT vs COUNT DISTINCT; GROUP BY HAVING,SELECT DISTINCT,Uniqueness,Duplicates are identical
+5,customers,gender,Blank values,77,NULL count per column,Set to 'Unknown',Completeness,No inference from names
+6,customers,gender,Mixed coding (Male/Female/m/f alongside M/F),115,GROUP BY gender,Mapped to Male/Female by first letter,Consistency,None
+7,customers,segment,Blank values,66,NULL count per column,COALESCE to 'Unknown',Completeness,None
+8,customers,city,Same city written differently (Bangalore/Bengaluru; Delhi/New Delhi/delhi; Gurgaon/Gurugram; Bombay/Mumbai),123,GROUP BY city,TRIM + INITCAP + CASE mapping to official names,Consistency,New Delhi mapped to Delhi to match store cities
+9,customers,signup_date,Four date formats in one column,597,Regex classification of formats,CASE + TO_DATE per format,Validity,Non-ISO dates are day-first
+10,customers,customer_name,All caps and extra spaces,60,customer_name <> TRIM() OR = UPPER(),INITCAP(TRIM()),Consistency,None
+11,orders,(full row),Exact duplicate rows,42,COUNT vs COUNT DISTINCT on order_id+line_no; GROUP BY HAVING,SELECT DISTINCT,Uniqueness,Duplicates are identical
+12,orders,order_date,Four date formats in one column,1664,Regex classification of formats,CASE + TO_DATE per format,Validity,Non-ISO dates are day-first
+13,orders,ship_date,Blank values,31,NULL count per column,Kept; flagged bad_ship_date,Completeness,Excluded only from delivery-time metrics
+14,orders,ship_date,Ship date earlier than order date,23,Date comparison after parsing,Kept; flagged bad_ship_date,Accuracy,Excluded only from delivery-time metrics
+15,orders,discount,Blank values,111,NULL count per column,Derived as 1 - sales_amount / (ABS(quantity) x unit_price),Completeness,sales_amount is trusted (client rule)
+16,orders,discount,Stored as percentage text (e.g. 15%),224,Regex numeric check,Removed % and divided by 100,Validity,None
+17,orders,sales_amount,Text with rupee symbol and commas,168,Regex numeric check,Removed symbol and commas; cast to numeric,Validity,None
+18,orders,quantity,Negative quantities,22,quantity <= 0 check,ABS(quantity),Accuracy,Data-entry sign error; sales_amount positive
+19,orders,quantity,Outlier value 999,5,quantity > 50 check,Recalculated from sales_amount / (unit_price x (1 - discount)),Accuracy,sales_amount is trusted (client rule)
+20,orders,order_status,Inconsistent case and leading spaces,178,GROUP BY order_status,INITCAP(TRIM()),Consistency,None
+21,orders,customer_id,Customer IDs not in customer master,17,LEFT JOIN to customers; IS NULL,Kept; flagged is_unknown_customer,Integrity,Sales retained (client rule)
+22,orders,product_id,Lowercase IDs failing join to product master,114,LEFT JOIN to products; re-check with UPPER() returned 0,UPPER(TRIM()),Consistency,Not missing products; case issue only
+23,orders,payment_mode,Cash on Delivery written four ways (COD/cod/Cash On Delivery),286,GROUP BY payment_mode,Mapped to 'Cash on Delivery',Consistency,None

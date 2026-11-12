@@ -1,0 +1,13 @@
+store_id,store_name,city,region,opened_date
+S01,FreshKart Pitampura,Delhi,North,2019-04-01
+S02,FreshKart Gurugram,Gurugram,North,2020-07-15
+S03,FreshKart Noida,Noida,North,2021-01-10
+S04,FreshKart Andheri,Mumbai,West,2019-09-20
+S05,FreshKart Pune,Pune,West,2022-02-01
+S06,FreshKart Ahmedabad,Ahmedabad,West,2022-11-05
+S07,FreshKart Koramangala,Bengaluru,South,2019-06-12
+S08,FreshKart Chennai,Chennai,South,2020-03-03
+S09,FreshKart Hyderabad,Hyderabad,South,2021-08-18
+S10,FreshKart Salt Lake,Kolkata,East,2020-12-01
+S11,FreshKart Bhubaneswar,Bhubaneswar,East,2023-05-25
+S12,FreshKart Raipur,Raipur,Central,2023-09-09
